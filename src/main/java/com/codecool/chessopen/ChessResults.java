@@ -38,21 +38,21 @@ public class ChessResults {
         return nameAndSum;
     }
 
-    private void sortOrder(List<String> results){
+    private void sortOrder(List<String> results) {
         for (int i = 0; i < results.size(); i++) {
             for (int j = 0; j < results.size() - 1; j++) {
-                Integer num1 = Integer.parseInt(results.get(j).replaceAll("[^0-9]",""));
-                Integer num2 = Integer.parseInt(results.get(j + 1).replaceAll("[^0-9]",""));
+                Integer num1 = Integer.parseInt(results.get(j).replaceAll("[^0-9]", ""));
+                Integer num2 = Integer.parseInt(results.get(j + 1).replaceAll("[^0-9]", ""));
                 if (num1 < num2) {
-                    String temp = results.get(j+1);
-                    results.set(j+1, results.get(j));
+                    String temp = results.get(j + 1);
+                    results.set(j + 1, results.get(j));
                     results.set(j, temp);
                 }
             }
         }
     }
 
-    private void justNames(List<String> results){
+    private void justNames(List<String> results) {
         for (int i = 0; i < results.size(); i++) {
             String justName = results.get(i).replaceAll("[0-9,]", "");
             results.set(i, justName);
